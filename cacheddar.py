@@ -246,7 +246,7 @@ def showVersion(client):
 
 if __name__ == "__main__":
 	initialAction()
-	client = base.Client(('104.199.105.96',11211))
+	client = base.Client(('memcached',11211))
 	while True:
 		opt = getOption()
 		doAction(client, opt)
