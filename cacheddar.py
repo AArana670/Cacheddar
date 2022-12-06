@@ -8,8 +8,6 @@ def initialAction():
 	print(" / _/ _` / _| ' \/ -_) _` / _` / _` | '_|")
 	print(" \__\__,_\__|_||_\___\__,_\__,_\__,_|_|  ")
 	print("                                         ")
-	print("   por  Aitor Arana Vázquez de Prada     ")
-	print("                                         ")
 	print("    (introduce 0 para ver la ayuda)      ")
 	print("                                         ")
 
@@ -128,7 +126,7 @@ def writeValue(client, preKey):
 	if decision == 'y':
 		print("Introduce el valor para", key)
 		val = input()
-		client.set(key,val)
+		client.set(str(key),str(val))
 		if val == client.get(key).decode():
 			print("El valor de", key, "se ha escrito exitosamente")
 		else:
@@ -248,7 +246,7 @@ def showVersion(client):
 
 if __name__ == "__main__":
 	initialAction()
-	client = base.Client(('127.0.0.1',11211))
+	client = base.Client(('104.199.105.96',11211))
 	while True:
 		opt = getOption()
 		doAction(client, opt)

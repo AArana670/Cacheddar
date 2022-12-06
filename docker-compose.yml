@@ -1,0 +1,14 @@
+services:
+  memcached:
+    image: memcached
+    #name: memcached-server
+    ports:
+      - "11211:11211"
+  cacheddar:
+    image: cacheddar
+    build: .
+    depends_on:
+      - memcached
+    stdin_open: true
+    tty: true
+    #restart: "no"
